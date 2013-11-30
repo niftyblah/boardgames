@@ -1,0 +1,84 @@
+<html>
+<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ZeroClipboard.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="iioEngine.js"></script>
+	<script type="text/javascript" src="js/c4.js"></script>
+	<script type="text/javascript" src="css/js/bootstrap.min.js"></script>
+
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/css/flat-ui.css">
+	<style>
+		body { background-color: #ECF0F1; }
+		#container {
+			position: absolute;
+			width: 560px;
+			left: 50%;
+			margin-left: -280px;
+		}
+		canvas {
+			
+			border: solid 6px #2C3E50;
+			
+		}
+		#text{
+			font-size: 28pt;
+			text-align: center;
+			font-family: Lato, Helvetica, Arial, sans-serif;
+			display: inline-block;
+		}
+
+		#copy-con { width: 250px; margin: 0 auto; text-align: center; }
+		#replay, #copy { font-size: 28pt; cursor: pointer; margin-left: 10px;}
+
+		#setup {
+			margin: 0 auto;
+			width: 170px;
+		}
+
+		#setup .btn { margin-bottom: 10px; }
+
+		#setup #btnCreateGame { 
+			margin-top: 20px; 
+			margin-bottom: 25px;
+		}
+
+		.green { color: #1abc9c; }
+		.red { color: #E11616;}
+	</style>
+</head>
+<body>
+	
+    <div id='container'>
+		<div id="setup">
+			<button id="btnCreateGame" class="btn btn-hg btn-primary btn-block">CREATE</button>
+			<button id="btnJoinGame" class="btn btn-hg btn-primary btn-block">JOIN</button>
+			<input id="inputGameId" type="text" class="form-control input-hg"/>
+	    </div>
+
+	    <div id="copy-con">
+   			<p id="text"></p>
+   			<i id="copy"class="fa fa-clipboard hidden" data-clipboard-target="text"></i>
+   			<i id="replay" class="fa fa-refresh hidden"></i>
+   		</div>
+    	<canvas id="canvas" class="hidden" width="560px" height="480px"></canvas>
+    </div>
+
+    <div id="batman" class="modal" role="dialog" aria-hidden="true" tabindex="-1">
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+				<div class="modal-body">
+					<p id="modal-text"></p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" id="modal-confirm" data-dismiss="modal" aria-hidden="true">Ok</button>
+					<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+				</div>
+			</div>
+		</div>
+    </div>
+
+</body>
+</html>

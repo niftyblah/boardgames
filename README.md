@@ -1,4 +1,4 @@
-boardgames
-==========
+potential-shame
+===============
 
-collection of lame games
+collection of games
